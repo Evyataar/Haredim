@@ -1,6 +1,7 @@
 
 backend:
   name: git-gateway
+  repo: evyataar/Haredim
   branch: main
 
 media_folder: "assets/uploads"
