@@ -1,0 +1,30 @@
+
+body {
+  direction: rtl;
+  font-family: 'Frank Ruhl Libre', serif;
+  background-color: #f6f6f6;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #253858;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+main {
+  padding: 2em;
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
