@@ -6,7 +6,7 @@ title: חדשות מהדרין
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>{{ page.title }}</title>
 </head>
 <body>
@@ -17,11 +17,11 @@ title: חדשות מהדרין
 
   <main>
     {% for post in site.posts %}
-    <article>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p>{{ post.date | date: "%d/%m/%Y" }}</p>
-      <div>{{ post.excerpt }}</div>
-    </article>
+      <article>
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <p>{{ post.date | date: "%d/%m/%Y" }}</p>
+        <div>{{ post.excerpt }}</div>
+      </article>
     {% endfor %}
   </main>
 </body>
