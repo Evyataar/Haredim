@@ -12,12 +12,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-collections:
-  posts:
-    output: true
-    permalink: /:title/
-    folder: _posts
-
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
