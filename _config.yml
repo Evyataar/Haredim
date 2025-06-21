@@ -1,3 +1,7 @@
+backend:
+  name: git-gateway
+  branch: main
+  repo: evyataar/Haredim
 
 title: חדשות מהדרין
 description: אתר חדשות חצי בדיחה, חצי רציני
