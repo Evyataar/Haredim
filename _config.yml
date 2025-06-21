@@ -8,7 +8,6 @@ description: אתר חדשות חצי בדיחה, חצי רציני
 baseurl: ""
 url: "https://yourusername.github.io/news-site"
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
