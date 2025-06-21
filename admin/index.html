@@ -1,11 +1,25 @@
-<!doctype html>
-<html lang="he" dir="rtl">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="utf-8">
-    <title>כניסה למערכת</title>
+    <meta charset="UTF-8" />
+    <title>Content Manager</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <!-- Netlify CMS will inject here -->
+    <!-- This will load the Netlify CMS UI -->
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+
+    <script>
+      // Optional but recommended: automatically open the Netlify Identity modal if not logged in
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
