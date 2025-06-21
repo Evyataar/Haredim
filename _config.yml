@@ -16,7 +16,7 @@ collections:
   posts:
     output: true
     permalink: /:title/
-    folder: content/posts
+    folder: _posts
 
 plugins:
   - jekyll-feed
