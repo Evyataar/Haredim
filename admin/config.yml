@@ -1,18 +1,21 @@
 backend:
   name: git-gateway
   branch: main
-  repo: evyataar/Haredim
 
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+local_backend: true
+
+auth:
+  use_identity_widget: true
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: "news"
-    label: "כתבות"
-    folder: "_posts"
+  - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
-      - {label: "כותרת", name: "title", widget: "string"}
-      - {label: "תאריך", name: "date", widget: "datetime"}
-      - {label: "תוכן", name: "body", widget: "markdown"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
