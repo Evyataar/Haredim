@@ -46,11 +46,10 @@ layout: none
   <p>אתר חדשות חצי ברצינות, חצי בריחוק</p>
 
   {% for post in site.posts %}
-    <div class="post">
-      <div class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></div>
-      <div class="post-date">{{ post.date | date: "%-d ב%B %Y" }}</div>
-      <p>{{ post.excerpt }}</p>
-    </div>
-  {% endfor %}
+  <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+  <p>{{ post.date | date: "%B %e, %Y" }}</p>
+  <p>{{ post.excerpt }}</p>
+{% endfor %}
+
 </body>
 </html>
