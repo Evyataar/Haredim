@@ -12,3 +12,10 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+collections:
+  posts:
+    output: true
+    permalink: /:title/
+    folder: content/posts
+
