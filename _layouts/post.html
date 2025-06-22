@@ -21,7 +21,12 @@ layout: default
   {% if page.author or site.author %}
     פורסם על ידי {{ page.author | default: site.author }}
   {% endif %}
-  ב־{{ page.date | date: "%-d ב%B %Y" }} · 
+ <time id="gregorian-date" datetime="{{ page.date | date: '%Y-%m-%d' }}">
+  {{ page.date | date: "%d ב-%m %Y" }}
+</time>
+<br>
+<span id="hebrew-date" style="display:inline-block; direction: rtl;"></span>
+ 
     <br><span id="hebrew-date" style="display:inline-block; direction: rtl;"></span>
 
   {% assign words = page.content | number_of_words %}
