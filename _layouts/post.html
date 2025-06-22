@@ -22,6 +22,8 @@ layout: default
     פורסם על ידי {{ page.author | default: site.author }}
   {% endif %}
   ב־{{ page.date | date: "%-d ב%B %Y" }} · 
+    <br><span id="hebrew-date" style="display:inline-block; direction: rtl;"></span>
+
   {% assign words = page.content | number_of_words %}
   {% if words < 270 %}
     דקת קריאה
