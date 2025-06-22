@@ -2,26 +2,24 @@ backend:
   name: git-gateway
   branch: main
 
-local_backend: true
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
 
-auth:
-  use_identity_widget: true
-
-media_folder: "static/images/uploads"
-public_folder: "/images/uploads"
+locale: 'he'
 
 collections:
   - name: "posts"
-    label: "Posts"
+    label: "פוסטים"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    format: "frontmatter"
-   fields:
-  - { label: "Title", name: "title", widget: "string" }
-  - { label: "Date", name: "date", widget: "datetime" }
-  - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
-  - { label: "Body", name: "body", widget: "markdown" }
-  - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
-
-
+    fields:
+      - label: "כותרת"
+        name: "title"
+        widget: "string"
+      - label: "תאריך"
+        name: "date"
+        widget: "datetime"
+      - label: "תוכן"
+        name: "body"
+        widget: "markdown"
