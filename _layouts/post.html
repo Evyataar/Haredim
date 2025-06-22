@@ -17,11 +17,16 @@ layout: default
             {% if page.subtitle %}
             <h2 class="subheading">{{ page.subtitle }}</h2>
             {% endif %}
-            <span class="meta">Posted by
-              <a href="#">{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</a>
-              on {{ page.date | date: '%B %d, %Y' }} &middot; {% include read_time.html
-              content=page.content %}
-            </span>
+            <span class="meta">
+  {{ 'פורסם על ידי' }} 
+  {% if page.author %}{{ page.author }}{% elsif site.author %}{{ site.author }}{% endif %}
+  |
+  <span class="gregorian-date">{{ page.date | date: '%b %d, %Y' }}</span>
+  |
+  <span class="hebrew-date" data-gregorian="{{ page.date | date: '%Y-%m-%d' }}"></span>
+  &middot; {% include read_time.html %}
+</span>
+
           </div>
         </div>
       </div>
