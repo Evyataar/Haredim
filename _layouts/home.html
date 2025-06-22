@@ -48,7 +48,10 @@ layout: default
             {{ site.author }}
             {% endif %}
             on
-            {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=post.content %}            
+            <span class="gregorian-date">{{ post.date | date: '%b %d, %Y' }}</span> |
+<span class="hebrew-date" data-gregorian="{{ post.date | date: '%Y-%m-%d' }}"></span>
+&middot; {% include read_time.html content=post.content %}
+          
           </p>
         </article>
 
