@@ -21,14 +21,19 @@ collections:
         name: "subtitle"
         widget: "string"
         required: false
-      - label: "תאריך"
-        name: "date"
-        widget: "datetime"
-      - label: "תוכן"
-        name: "body"
-        widget: "markdown"
       - label: "מחבר"
         name: "author"
         widget: "string"
         required: false
+      - label: "תאריך"
+        name: "date"
+        widget: "datetime"
+      - label: "תמונה ראשית"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+      - label: "תוכן"
+        name: "body"
+        widget: "markdown"
+  
 
