@@ -41,13 +41,23 @@ layout: default
             <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
             {% endif %}
           </a>
-          <p class="post-meta">Posted by
-            {% if post.author %}
-            {{ post.author }}
-            {% else %}
-            {{ site.author }}
-            {% endif %}
-            on
+         <p class="post-meta">
+  פורסם על ידי
+  {% if post.author %}
+    {{ post.author }}
+  {% else %}
+    {{ site.author }}
+  {% endif %}
+  ב־<span class="gregorian-date">{{ post.date | date: "%-d ב%B %Y" }}</span>
+  · 
+  {% assign words = post.content | number_of_words %}
+  {% if words < 270 %}
+    דקת קריאה
+  {% else %}
+    {{ words | divided_by:135 }} דקות קריאה
+  {% endif %}
+</p>
+
             <span class="gregorian-date">{{ post.date | date: '%b %d, %Y' }}</span> |
 <span class="hebrew-date" data-gregorian="{{ post.date | date: '%Y-%m-%d' }}"></span>
 &middot; {% include read_time.html content=post.content %}
