@@ -14,6 +14,18 @@
 
   {% include scripts.html %}
 
+  <script src="https://cdn.jsdelivr.net/npm/hebcal@2/browser/hebcal.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.hebrew-date').forEach(el => {
+      const gregDate = new Date(el.dataset.gregorian);
+      const hebrewDate = new Hebcal.HDate(gregDate).renderGematriya();
+      el.textContent = hebrewDate;
+    });
+  });
+</script>
+
+
   {% include google-analytics.html %}
 
 </body>
