@@ -18,6 +18,10 @@ header {
   font-size: 2rem;
   font-weight: 700;
   border-bottom: 5px solid #d4af37;
+  article h1 {
+  color: white;
+}
+
 }
 
 nav {
