@@ -17,15 +17,19 @@ layout: default
             {% if page.subtitle %}
             <h2 class="subheading">{{ page.subtitle }}</h2>
             {% endif %}
-            <span class="meta">
-  {{ 'פורסם על ידי' }} 
-  {% if page.author %}{{ page.author }}{% elsif site.author %}{{ site.author }}{% endif %}
-  |
-  <span class="gregorian-date">{{ page.date | date: '%b %d, %Y' }}</span>
-  |
-  <span class="hebrew-date" data-gregorian="{{ page.date | date: '%Y-%m-%d' }}"></span>
-  &middot; {% include read_time.html %}
+  <span class="meta">
+  {% if page.author or site.author %}
+    פורסם על ידי {{ page.author | default: site.author }}
+  {% endif %}
+  ב־{{ page.date | date: "%-d ב%B %Y" }} · 
+  {% assign words = page.content | number_of_words %}
+  {% if words < 270 %}
+    דקת קריאה
+  {% else %}
+    {{ words | divided_by:135 }} דקות קריאה
+  {% endif %}
 </span>
+
 
           </div>
         </div>
