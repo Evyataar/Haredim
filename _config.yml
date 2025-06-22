@@ -5,7 +5,7 @@ backend:
 
 title: חדשות מהדרין
 description: אתר חדשות חצי בדיחה, חצי רציני
-baseurl: ""
+baseurl: "/Haredim"
 url: "https://yourusername.github.io/news-site"
 markdown: kramdown
 plugins:
