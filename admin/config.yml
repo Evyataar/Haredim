@@ -17,9 +17,14 @@ collections:
       - label: "כותרת"
         name: "title"
         widget: "string"
+      - label: "כותרת משנה"
+        name: "subtitle"
+        widget: "string"
+        required: false
       - label: "תאריך"
         name: "date"
         widget: "datetime"
       - label: "תוכן"
         name: "body"
         widget: "markdown"
+
