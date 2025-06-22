@@ -33,9 +33,6 @@ layout: default
         {% for post in site.posts limit : 5 %}
 
         <article class="post-preview">
-          <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-            <h2 class="post-title">{{ post.title }}</h2>
-          <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
  <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
   <div style="display: flex; align-items: center; gap: 10px;">
     <h2 class="post-title" style="margin: 0;">{{ post.title }}</h2>
@@ -90,7 +87,8 @@ layout: default
 
         <hr>
 
-        {% endfor %}
+       {% endfor %}
+
 
         <!-- Pager -->
         <div class="clearfix">
