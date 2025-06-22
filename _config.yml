@@ -4,7 +4,7 @@ backend:
   repo: evyataar/Haredim
 
 title: חדשות מהדרין
-description: אתר חדשות חצי בדיוני, חצי רציני
+description: אתר חדשות לחרדים חושבים
 baseurl: "" # leave empty for root
 url: "https://haredim.netlify.app"
 permalink: /:title/
