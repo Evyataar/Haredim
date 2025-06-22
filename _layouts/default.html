@@ -4,6 +4,28 @@
 
 {% include head.html %}
 
+<script src="https://unpkg.com/hebrew-date"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const timeTag = document.getElementById("gregorian-date");
+    if (!timeTag) return;
+
+    const isoDate = timeTag.getAttribute("datetime");
+    if (!isoDate) return;
+
+    try {
+      const date = new Date(isoDate);
+      const hd = HebrewDate(date);
+      const formatted = hd.format({ hebrew: true, lang: 'he', format: 'D בMMMM הYYYY' });
+      document.getElementById('hebrew-date').textContent = `(${formatted})`;
+    } catch (e) {
+      console.warn("Hebrew date failed", e);
+    }
+  });
+</script>
+
+
+  
 <body>
 
   {% include navbar.html %}
