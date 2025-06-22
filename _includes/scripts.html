@@ -80,5 +80,22 @@
     $('#name').focus(function () {
       $('#success').html('');
     });
+
+    <script src="https://unpkg.com/hebrew-date"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const options = { hebrew: true, lang: 'he', format: 'D בMMMM הYYYY' };
+    const date = new Date(document.querySelector('time')?.getAttribute('datetime') || Date.now());
+
+    try {
+      const hd = window.HebrewDate(date);
+      const formatted = hd.format(options);
+      document.getElementById('hebrew-date').textContent = `(${formatted})`;
+    } catch (e) {
+      console.warn("Hebrew date failed", e);
+    }
+  });
+</script>
+
   </script>
 {% endif %}
