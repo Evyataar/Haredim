@@ -4,21 +4,22 @@ backend:
   repo: evyataar/Haredim
 
 title: חדשות מהדרין
-description: אתר חדשות חצי בדיחה, חצי רציני
+description: אתר חדשות חצי ברצינות, חצי בריחוק
 baseurl: ""  # leave empty for root
 url: "https://haredim.netlify.app"
 permalink: /:title/
 markdown: kramdown
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
 include:
   - assets
-  defaults:
+
+defaults:
   - scope:
       path: ""
-      type: "posts"
+      type: posts
     values:
       layout: post
-
-
