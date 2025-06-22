@@ -35,6 +35,14 @@ layout: default
         <article class="post-preview">
           <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
             <h2 class="post-title">{{ post.title }}</h2>
+
+            <h2 class="post-title" style="display: inline-block; vertical-align: middle;">{{ post.title }}</h2>
+
+{% if post.thumbnail %}
+  <img src="{{ post.thumbnail }}" alt="תמונה ראשית" style="width: 80px; height: auto; vertical-align: middle; margin-right: 10px;" />
+{% endif %}
+
+            
             {% if post.subtitle %}
             <h3 class="post-subtitle">{{ post.subtitle }}</h3>
             {% else %}
