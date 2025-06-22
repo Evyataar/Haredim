@@ -36,7 +36,6 @@ layout: default
           <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
             <h2 class="post-title">{{ post.title }}</h2>
 
-           <div style="display: flex; align-items: center; gap: 10px;">
   {% if post.thumbnail %}
     <img src="{{ post.thumbnail }}" alt="תמונה ראשית" style="width: 60px; height: auto;" />
   {% endif %}
