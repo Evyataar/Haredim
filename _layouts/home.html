@@ -48,8 +48,12 @@ layout: default
   {% else %}
     {{ site.author }}
   {% endif %}
-  ב־<span class="gregorian-date">{{ post.date | date: "%-d ב%B %Y" }}</span>
-  · 
+  <time id="gregorian-date-{{ forloop.index }}" class="gregorian-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">
+  {{ post.date | date: "%-d ל-%m %Y" }}
+</time>
+<br>
+<span id="hebrew-date-{{ forloop.index }}" class="hebrew-date" style="display:inline-block; direction: rtl;"></span>
+
   {% assign words = post.content | number_of_words %}
   {% if words < 270 %}
     דקת קריאה
