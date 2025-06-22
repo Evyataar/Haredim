@@ -7,7 +7,7 @@ title: חדשות מהדרין
 description: אתר חדשות חצי בדיחה, חצי רציני
 baseurl: "/Haredim"
 url: "https://yourusername.github.io/news-site"
-permalink: /:categories/:year/:month/:day/:title:output_ext
+permalink: /:title/
 markdown: kramdown
 plugins:
   - jekyll-feed
