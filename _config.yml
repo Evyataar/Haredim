@@ -14,4 +14,11 @@ plugins:
   - jekyll-seo-tag
 include:
   - assets
+  defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+
 
