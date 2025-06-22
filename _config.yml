@@ -4,15 +4,21 @@ backend:
   repo: evyataar/Haredim
 
 title: חדשות מהדרין
-description: אתר חדשות חצי ברצינות, חצי בריחוק
-baseurl: ""  # leave empty for root
+description: אתר חדשות חצי בדיוני, חצי רציני
+baseurl: "" # leave empty for root
 url: "https://haredim.netlify.app"
 permalink: /:title/
 markdown: kramdown
 
+# Pagination (used by Clean Blog)
+paginate: 5
+paginate_path: "/page:num/"
+timezone: Asia/Jerusalem
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-paginate # Add this to support Clean Blog's pagination
 
 include:
   - assets
@@ -20,6 +26,6 @@ include:
 defaults:
   - scope:
       path: ""
-      type: posts
+      type: "posts"
     values:
       layout: post
