@@ -8,48 +8,21 @@ layout: none
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>חדשות מהדרין</title>
-  <style>
-    body {
-      direction: rtl;
-      font-family: "Noto Sans Hebrew", sans-serif;
-      background: white;
-      color: black;
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .post {
-      margin-top: 2rem;
-      border-top: 1px solid #ccc;
-      padding-top: 1rem;
-    }
-
-    .post-title {
-      font-size: 1.5rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .post-date {
-      color: #666;
-      font-size: 0.9rem;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap" rel="stylesheet">
+<link href="{{ '/assets/css/style.css' | relative_url }}" rel="stylesheet">
 </head>
 <body>
   <h1>חדשות מהדרין</h1>
   <p>אתר חדשות חצי ברצינות, חצי בריחוק</p>
 
-  {% for post in site.posts %}
-  <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-  <p>{{ post.date | date: "%B %e, %Y" }}</p>
-  <p>{{ post.excerpt }}</p>
+ {% for post in site.posts %}
+  <div class="post">
+    <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p class="post-date">{{ post.date | date: "%B %e, %Y" }}</p>
+    <p>{{ post.excerpt }}</p>
+  </div>
 {% endfor %}
+
 
 </body>
 </html>
