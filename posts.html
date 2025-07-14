@@ -4,13 +4,24 @@ title: כל הכתבות
 permalink: /posts/
 ---
 
-<h1>כל הכתבות</h1>
+<h1 class="page-title">כל הכתבות</h1>
 
-<ul class="posts">
+<div class="post-list">
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      <span class="date">{{ post.date | date: "%d/%m/%Y" }}</span>
-    </li>
+  <article class="post-preview">
+    <h2 class="post-title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h2>
+
+    {% if post.subtitle %}
+    <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+    {% endif %}
+
+    <p class="post-meta">{{ post.date | date: "%-d ב%B %Y" }}</p>
+
+    <p class="post-excerpt">
+      {{ post.excerpt | strip_html | truncatewords: 20 }}
+    </p>
+  </article>
   {% endfor %}
-</ul>
+</div>
