@@ -1,0 +1,16 @@
+body {
+  direction: rtl;
+  text-align: right;
+}
+
+.container, .row, .col {
+  text-align: right;
+}
+
+.post-preview {
+  text-align: right;
+}
+
+nav, header, footer {
+  direction: rtl;
+}
