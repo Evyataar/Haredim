@@ -34,4 +34,14 @@ nav, header, footer {
   border-radius: 4px !important;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
 }
+
+  .post-content img,
+.col-lg-8 img,
+img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 1.5rem auto;
+  max-height: 500px !important;
+}
 }
