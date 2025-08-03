@@ -14,14 +14,15 @@ img:not(.home-thumbnail) {
   box-shadow: 0 1px 4px rgba(0,0,0,0.12), 0 0.5px 1.5px rgba(0,0,0,0.12) !important;
 }
 
-.home-thumbnail {
+img.home-thumbnail {
   width: 60px !important;
+  max-width: 60px !important;
   height: auto !important;
   margin: 0 !important;
-  border-radius: 4px !important;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.12), 0 0.5px 1.5px rgba(0,0,0,0.12) !important;
   display: inline-block !important;
   vertical-align: middle;
+  border-radius: 4px !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12), 0 0.5px 1.5px rgba(0,0,0,0.12) !important;
 }
 
 @import "styles";
