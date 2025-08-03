@@ -13,4 +13,15 @@ body {
 
 nav, header, footer {
   direction: rtl;
+
+  .post-subtitle {
+  font-size: 1.1em;      /* Smaller than the title */
+  color: #555;           /* Lighter color */
+  font-weight: 400;      /* Less bold */
+  margin-top: 0.2em;
+  margin-bottom: 1em;
+  display: block;
+  cursor: pointer;       /* Shows it is clickable */
+  text-decoration: underline; /* Optional: underline for links */
+}
 }
