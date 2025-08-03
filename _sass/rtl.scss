@@ -28,10 +28,10 @@ nav, header, footer {
   img {
   max-width: 100% !important;
   height: auto !important;
-  display: block;
-  margin: 1.5rem auto;
+  display: block !important;
+  margin: 1.5rem auto !important;
   max-height: 500px !important; /* Adjust this value as you like */
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 4px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
 }
 }
