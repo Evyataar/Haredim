@@ -25,10 +25,10 @@ nav, header, footer {
   text-decoration: underline; /* Optional: underline for links */
 }
 
-  .post-content img,
+.post-content img,
 .col-lg-8 img,
 .container img,
-img {
+img:not(.home-thumbnail) {
   max-width: 600px !important;
   width: 100% !important;
   height: auto !important;
