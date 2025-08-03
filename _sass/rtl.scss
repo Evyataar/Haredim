@@ -25,42 +25,15 @@ nav, header, footer {
   text-decoration: underline; /* Optional: underline for links */
 }
 
-  img {
-  max-width: 100% !important;
-  height: auto !important;
-  display: block !important;
-  margin: 1.5rem auto !important;
-  max-height: 500px !important; /* Adjust this value as you like */
-  border-radius: 4px !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
-}
-
   .post-content img,
 .col-lg-8 img,
+.container img,
 img {
-  max-width: 100% !important;
-  height: auto !important;
-  display: block;
-  margin: 1.5rem auto;
-  max-height: 500px !important;
-}
-
-  .post-content img {
-  max-width: 100% !important;
-  height: auto !important;
-  display: block !important;
-  margin: 1.5rem auto;
-  max-height: 500px !important;
-  border-radius: 4px !important;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.12), 0 0.5px 1.5px rgba(0,0,0,0.12) !important;
-}
-
-  img {
-  max-width: 100% !important;
+  max-width: 600px !important;
+  width: 100% !important;
   height: auto !important;
   display: block !important;
   margin: 1.5rem auto !important;
-  max-height: 500px !important;
   border-radius: 4px !important;
   box-shadow: 0 1px 4px rgba(0,0,0,0.12), 0 0.5px 1.5px rgba(0,0,0,0.12) !important;
 }
