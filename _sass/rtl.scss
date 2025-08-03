@@ -25,13 +25,13 @@ nav, header, footer {
   text-decoration: underline; /* Optional: underline for links */
 }
 
-  article img {
-  max-width: 100% !important;       /* Prevents image from overflowing the article */
-  height: auto !important;          /* Maintains aspect ratio */
+  img {
+  max-width: 100% !important;
+  height: auto !important;
   display: block;
-  margin: 1.5rem auto;   /* Centers image and adds spacing */
-  border-radius: 4px;    /* Optional: slightly rounded corners */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Optional: soft shadow */
-  max-height: 500px !important;     /* Limits image height to 500px (adjust as needed) */
+  margin: 1.5rem auto;
+  max-height: 500px !important; /* Adjust this value as you like */
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 }
