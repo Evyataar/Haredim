@@ -48,4 +48,42 @@ img:not(.home-thumbnail) {
   box-shadow: 0 1px 4px rgba(0,0,0,0.12), 0 0.5px 1.5px rgba(0,0,0,0.12) !important;
 }
 
+  .featured-post {
+  display: flex;
+  flex-direction: row-reverse;  /* RTL layout: image on the right */
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.featured-thumbnail {
+  width: 220px;
+  max-width: 220px;
+  height: auto;
+  margin-left: 1rem;  /* add space between image and text */
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.featured-content {
+  flex: 1;
+}
+
+.featured-content h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+}
+
+.featured-excerpt {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.featured-meta {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+
 }
