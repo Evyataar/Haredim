@@ -29,69 +29,58 @@ layout: default
 
       {{ content }}
 
-     {% assign first_post = site.posts.first %}
-{% assign other_posts = site.posts | slice: 1,4 %}
+      {% assign first_post = site.posts.first %}
+      {% assign other_posts = site.posts | slice: 1,4 %}
 
-<!-- Featured post -->
-{% if first_post %}
-  <article class="featured-post">
-    <a href="{{ first_post.url | relative_url }}">
-      {% if first_post.thumbnail %}
-        <img src="{{ first_post.thumbnail }}" alt="תמונה ראשית" class="featured-thumbnail">
+      <!-- Featured post -->
+      {% if first_post %}
+        <article class="featured-post">
+          <a href="{{ first_post.url | relative_url }}">
+            {% if first_post.thumbnail %}
+              <img src="{{ first_post.thumbnail }}" alt="תמונה ראשית" class="featured-thumbnail">
+            {% endif %}
+            <div>
+              <h2>{{ first_post.title }}</h2>
+              {% if first_post.subtitle %}
+                <h3>{{ first_post.subtitle }}</h3>
+              {% else %}
+                <h3>{{ first_post.excerpt | strip_html | truncatewords: 25 }}</h3>
+              {% endif %}
+              <p class="post-meta">
+                פורסם על ידי {{ first_post.author | default: site.author }} — 
+                <time datetime="{{ first_post.date | date: '%Y-%m-%d' }}">{{ first_post.date | date: "%-d ל-%m %Y" }}</time>
+              </p>
+            </div>
+          </a>
+        </article>
       {% endif %}
-      <div>
-        <h2>{{ first_post.title }}</h2>
-        {% if first_post.subtitle %}
-          <h3>{{ first_post.subtitle }}</h3>
-        {% else %}
-          <h3>{{ first_post.excerpt | strip_html | truncatewords: 25 }}</h3>
-        {% endif %}
-        <p class="post-meta">
-          פורסם על ידי {{ first_post.author | default: site.author }} — 
-          <time datetime="{{ first_post.date | date: '%Y-%m-%d' }}">{{ first_post.date | date: "%-d ל-%m %Y" }}</time>
-        </p>
-      </div>
-    </a>
-  </article>
-{% endif %}
 
-    </a>
-    <p class="post-meta">
-      פורסם על ידי {{ first_post.author | default: site.author }}
-      —
-      <time datetime="{{ first_post.date | date: '%Y-%m-%d' }}">{{ first_post.date | date: "%-d ל-%m %Y" }}</time>
-    </p>
-    <hr>
-  </article>
-{% endif %}
-
-<!-- Other posts -->
-{% for post in other_posts %}
-  <article class="post-preview">
-    <a href="{{ post.url | relative_url }}">
-      {% if post.thumbnail %}
-        <img src="{{ post.thumbnail }}" alt="תמונה ראשית" class="home-thumbnail">
-      {% endif %}
-      <h2 class="post-title">{{ post.title }}</h2>
-      {% if post.subtitle %}
-        <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-      {% else %}
-        <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
-      {% endif %}
-    </a>
-    <p class="post-meta">
-      פורסם על ידי {{ post.author | default: site.author }}
-      —
-      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d ל-%m %Y" }}</time>
-    </p>
-    <hr>
-  </article>
-{% endfor %}
-
+      <!-- Other posts -->
+      {% for post in other_posts %}
+        <article class="post-preview">
+          <a href="{{ post.url | relative_url }}">
+            {% if post.thumbnail %}
+              <img src="{{ post.thumbnail }}" alt="תמונה ראשית" class="home-thumbnail">
+            {% endif %}
+            <h2 class="post-title">{{ post.title }}</h2>
+            {% if post.subtitle %}
+              <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+            {% else %}
+              <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
+            {% endif %}
+          </a>
+          <p class="post-meta">
+            פורסם על ידי {{ post.author | default: site.author }}
+            —
+            <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d ל-%m %Y" }}</time>
+          </p>
+          <hr>
+        </article>
+      {% endfor %}
 
       <!-- Pager -->
       <div class="clearfix">
-        <a class="btn btn-primary float-right" href="{{"/posts" | relative_url }}">View All Posts &rarr;</a>
+        <a class="btn btn-primary float-right" href="{{ "/posts" | relative_url }}">View All Posts &rarr;</a>
       </div>
 
     </div>
