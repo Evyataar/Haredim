@@ -29,34 +29,55 @@ layout: default
 
       {{ content }}
 
-      <!-- Home Post List -->
-      {% comment %} assign the first post and remaining posts {% endcomment %}
-      {% assign first_post = site.posts.first %}
-      {% assign other_posts = site.posts | slice: 1,4 %}
+     {% assign first_post = site.posts.first %}
+{% assign other_posts = site.posts | slice: 1,4 %}
 
-      {% if first_post %}
-        <!-- Featured post -->
-        <a href="{{ first_post.url | prepend: site.baseurl | replace: '//', '/' }}">
-          <div style="display: flex; align-items: center; gap: 20px;">
-            <h2 class="post-title" style="font-size: 2rem; margin: 0;">{{ first_post.title }}</h2>
-            {% if first_post.thumbnail %}
-              <img src="{{ first_post.thumbnail }}" alt="תמונה ראשית" class="home-thumbnail" style="width: 200px; height: auto;" />
-            {% endif %}
-          </div>
-        </a>
+<!-- Featured post -->
+{% if first_post %}
+  <article class="post-preview featured-post">
+    <a href="{{ first_post.url | relative_url }}">
+      {% if first_post.thumbnail %}
+        <img src="{{ first_post.thumbnail }}" alt="תמונה ראשית" class="featured-thumbnail">
       {% endif %}
+      <h2 class="post-title">{{ first_post.title }}</h2>
+      {% if first_post.subtitle %}
+        <h3 class="post-subtitle">{{ first_post.subtitle }}</h3>
+      {% else %}
+        <h3 class="post-subtitle">{{ first_post.excerpt | strip_html | truncatewords: 15 }}</h3>
+      {% endif %}
+    </a>
+    <p class="post-meta">
+      פורסם על ידי {{ first_post.author | default: site.author }}
+      —
+      <time datetime="{{ first_post.date | date: '%Y-%m-%d' }}">{{ first_post.date | date: "%-d ל-%m %Y" }}</time>
+    </p>
+    <hr>
+  </article>
+{% endif %}
 
-      <!-- Rest of the posts -->
-      {% for post in other_posts %}
-        <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <h2 class="post-title" style="margin: 0;">{{ post.title }}</h2>
-            {% if post.thumbnail %}
-              <img src="{{ post.thumbnail }}" alt="תמונה ראשית" class="home-thumbnail" />
-            {% endif %}
-          </div>
-        </a>
-      {% endfor %}
+<!-- Other posts -->
+{% for post in other_posts %}
+  <article class="post-preview">
+    <a href="{{ post.url | relative_url }}">
+      {% if post.thumbnail %}
+        <img src="{{ post.thumbnail }}" alt="תמונה ראשית" class="home-thumbnail">
+      {% endif %}
+      <h2 class="post-title">{{ post.title }}</h2>
+      {% if post.subtitle %}
+        <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+      {% else %}
+        <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
+      {% endif %}
+    </a>
+    <p class="post-meta">
+      פורסם על ידי {{ post.author | default: site.author }}
+      —
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d ל-%m %Y" }}</time>
+    </p>
+    <hr>
+  </article>
+{% endfor %}
+
 
       <!-- Pager -->
       <div class="clearfix">
