@@ -33,27 +33,31 @@ layout: default
       {% assign other_posts = site.posts | slice: 1,4 %}
 
       <!-- Featured post -->
-      {% if first_post %}
-        <article class="featured-post">
-          <a href="{{ first_post.url | relative_url }}">
-            {% if first_post.thumbnail %}
-              <img src="{{ first_post.thumbnail }}" alt="תמונה ראשית" class="featured-thumbnail">
-            {% endif %}
-            <div>
-              <h2>{{ first_post.title }}</h2>
-              {% if first_post.subtitle %}
-                <h3>{{ first_post.subtitle }}</h3>
-              {% else %}
-                <h3>{{ first_post.excerpt | strip_html | truncatewords: 25 }}</h3>
-              {% endif %}
-              <p class="post-meta">
-                פורסם על ידי {{ first_post.author | default: site.author }} — 
-                <time datetime="{{ first_post.date | date: '%Y-%m-%d' }}">{{ first_post.date | date: "%-d ל-%m %Y" }}</time>
-              </p>
-            </div>
-          </a>
-        </article>
-      {% endif %}
+     {% assign first_post = site.posts.first %}
+{% if first_post %}
+  <article class="featured-post">
+    <a href="{{ first_post.url | relative_url }}">
+      <div class="featured-media">
+        {% if first_post.thumbnail %}
+          <img src="{{ first_post.thumbnail }}" alt="{{ first_post.title }}" class="featured-thumbnail">
+        {% endif %}
+      </div>
+      <div class="featured-text">
+        <h2 class="featured-title">{{ first_post.title }}</h2>
+        {% if first_post.subtitle %}
+          <p class="featured-subtitle">{{ first_post.subtitle }}</p>
+        {% else %}
+          <p class="featured-subtitle">{{ first_post.excerpt | strip_html | truncatewords: 25 }}</p>
+        {% endif %}
+        <p class="featured-meta">
+          פורסם על ידי {{ first_post.author | default: site.author }} — 
+          <time datetime="{{ first_post.date | date: '%Y-%m-%d' }}">{{ first_post.date | date: "%-d ל-%m %Y" }}</time>
+        </p>
+      </div>
+    </a>
+  </article>
+{% endif %}
+
 
       <!-- Other posts -->
       {% for post in other_posts %}
