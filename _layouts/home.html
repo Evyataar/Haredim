@@ -34,34 +34,32 @@ layout: default
 {% assign first_post = site.posts.first %}
 {% assign other_posts = site.posts | slice: 1,4 %}
 
+<!-- Home Post List -->
+{% assign first_post = site.posts.first %}
+{% assign other_posts = site.posts | slice: 1, 4 %}
+
 {% if first_post %}
-  <!-- Featured article -->
-  <article class="featured-post">
-    <a href="{{ first_post.url }}">
+  <!-- Featured post -->
+  <a href="{{ first_post.url | prepend: site.baseurl | replace: '//', '/' }}">
+    <div style="display: flex; align-items: center; gap: 20px;">
+      <h2 class="post-title" style="font-size: 2rem; margin: 0;">{{ first_post.title }}</h2>
       {% if first_post.thumbnail %}
-        <img class="featured-thumbnail" src="{{ first_post.thumbnail }}" alt="{{ first_post.title }}">
+        <img src="{{ first_post.thumbnail }}" alt="תמונה ראשית" class="home-thumbnail" style="width: 200px; height: auto;" />
       {% endif %}
-      <div class="featured-content">
-        <h2>{{ first_post.title }}</h2>
-        <p class="featured-excerpt">{{ first_post.excerpt | strip_html | truncatewords: 40 }}</p>
-        <span class="featured-meta">
-          {{ first_post.author | default: site.author }} — {{ first_post.date | date: "%-d ל-%m %Y" }}
-        </span>
-      </div>
-    </a>
-  </article>
+    </div>
+  </a>
 {% endif %}
 
-<!-- Rest of the articles -->
+<!-- Rest of the posts -->
 {% for post in other_posts %}
-  <!-- your existing markup for regular posts -->
-  <article class="post-preview">
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% else %}<p>{{ post.excerpt | strip_html | truncatewords: 15 }}</p>{% endif %}
-    <span class="post-meta">
-      {{ post.author | default: site.author }} – {{ post.date | date: "%-d ל-%m %Y" }}
-    </span>
-  </article>
+  <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <h2 class="post-title" style="margin: 0;">{{ post.title }}</h2>
+      {% if post.thumbnail %}
+        <img src="{{ post.thumbnail }}" alt="תמונה ראשית" class="home-thumbnail" />
+      {% endif %}
+    </div>
+  </a>
 {% endfor %}
 
   </div>
